@@ -1,22 +1,36 @@
-class Usuario {
-   static login = "admin"
-   static senha = 123
+class Cadastro {
+   static usuarios = []
 
-    constructor(login, senha){
-        this.login =login
-        this.senha = senha
+
+  static  logar(usuario){
+        this.usuarios.incluedes(usuario)
     }
 
-  static  logar(login, senha){
-        if(login == this.login & senha == this.senha){
-            console.log("Logado")
-        } else{
-            console.log("Login invalido")
-        }
+    static cadastra(usuario){
+        this.usuarios.push(usuario)
     }
 }
 
-//const victor = new Usuario("admin", 123)
+
+class Usuario{
+    nome
+    login 
+    senha 
+
+    constructor(nome, login, senha){
+        this.nome = nome
+        this.login = login
+        this.senha = senha
+    }
+
+}
+
+const victor = new Usuario("Victor","admin", 123)
+const felipe = new Usuario("Felipe","admin", 1234)
+Cadastro.cadastra(victor)
+Cadastro.cadastra(felipe)
+
+console.log(Cadastro.usuarios)
 
 const botaoLogar = document.querySelector("#botaoLogar")
 const login = document.querySelector("#login")
